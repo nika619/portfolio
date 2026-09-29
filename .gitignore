@@ -1,0 +1,72 @@
+# ============================================================
+# MAYANK TIWARI PORTFOLIO — .gitignore
+# Only the live site is pushed. Everything else is excluded.
+# ============================================================
+
+# ---- Dev / Build Artifacts ----
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.cache
+
+# ---- Design Iteration Screenshots (not needed in repo) ----
+atelier_*.png
+cdp_*.png
+flagship_*.png
+handcraft_*.png
+mayank_*.png
+snap_*.png
+snap_*.png
+snap_full.png
+snap_hero.png
+snap_sec_*.png
+snap_projects*.png
+a_wide_*.png
+
+# ---- Design Process & Handoff Files ----
+Mayank_Tiwari_Portfolio_Design_Handoff.docx
+handoff_extracted.txt
+Portfolio\ Design\ Generation.html
+Portfolio\ Design\ Generation_files/
+
+# ---- Old Video ----
+port\ 1\ v.mp4
+*.mp4
+*.mov
+
+# ---- Verification / Dev Scripts ----
+verify_*.py
+empty.html
+
+# ---- Unused Image Collections ----
+# assets/ folder is from old portfolio versions
+assets/
+
+# ---- Unused images inside /images (only 7 files are used) ----
+# Exclude everything in images/ first, then whitelist the 7 used ones
+images/*
+!images/parity_showcase.png
+!images/career_pathfinder_hero.png
+!images/eco_ops_showcase.png
+!images/backstop_showcase.png
+!images/mayank_suit.jpg
+!images/midnight_drive.png
+!images/philosophy-bg.jpg
+
+# ---- Old Portfolio Variants ----
+downloaded/
+extracted_frames/
+portfolio/
+replica/
+
+# ---- Concept Board ----
+a_wide_high_resolution_ui_portfolio_concept_board.png
+
+# ---- Environment / Secrets (safety net) ----
+.env
+.env.*
+*.pem
+*.key
+*.secret

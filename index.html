@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mayank Tiwari — Autonomous AI &amp; Cloud Systems Architect | BBDU Lucknow</title>
+
+  <meta name="description" content="Portfolio of Mayank Tiwari (nika619) — Final-year CSE at BBDU Lucknow (May 2027), AMPlified Season 1 National Finalist (Rank #6), LovHack Season 2 Winner. Architect of BackStop, Career PathFinder, and ECO-OPS.">
+  <meta name="author" content="Mayank Tiwari">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mayank Tiwari — Autonomous AI &amp; Cloud Systems Architect">
+  <meta property="og:description" content="Engineering autonomous AI systems, deterministic policy gates, and production cloud architectures. National Finalist (Rank #6) AMPlified Season 1, Winner LovHack Season 2.">
+  <meta property="og:image" content="images/philosophy-bg.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#09090c">
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono, Roboto Flex, Cinzel, Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- External Libraries: Three.js, Lenis, GSAP, ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body data-theme="ember">
+
+  <!-- Ambient Film Grain Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Top Scroll Progress Line -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Interactive Toast Notification -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- =========================================================================
+       00. PRELOADER CALIBRATION (0 TO 100 Counter)
+       ========================================================================= -->
+  <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading Mayank Tiwari Portfolio">
+    <span class="loading-counter" id="loading-counter">0</span>
+    <div class="loading-name" id="loading-name">Mayank Tiwari</div>
+    <div class="loading-status-text" id="loading-status-text">INITIALIZING SYSTEMS ARCHITECTURE...</div>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill" id="loading-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       HEADER NAVIGATION CHROME & PALETTE SWITCHER
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-left">
+      <a href="#hero" class="brand-monogram" aria-label="Mayank Tiwari Home">
+        MT<span class="brand-dot">.</span>
+      </a>
+      <span class="brand-badge-top" id="header-status-badge">
+        <span class="beacon-pulse-dot"></span>
+        AVAILABLE FOR AI ROLES · MAY 2027
+      </span>
+    </div>
+
+    <!-- Center Navigation Links -->
+    <nav class="nav-center-links" aria-label="Main Navigation">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#introduction" class="nav-link">Philosophy</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Right Header Controls -->
+    <div class="header-right">
+      <!-- Interactive Theme Palette Switcher -->
+      <div class="palette-switcher" id="palette-switcher" style="display:none"></div>
+
+      <!-- Command Palette Search Button -->
+      <button class="cmd-k-trigger-btn" id="cmd-k-btn" aria-label="Open Command Palette (Press ⌘K or Ctrl+K)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+        <kbd>⌘K</kbd>
+      </button>
+
+      <!-- Audio Synthesizer Toggle -->
+      <button class="audio-toggle-btn" id="audio-toggle-btn" aria-label="Toggle Sound Effects" title="Toggle Sound Feedback">
+        <span id="audio-icon">♪</span>
+      </button>
+
+      <!-- Staggered Drawer Menu Toggle Button -->
+      <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span class="menu-btn-text" id="menu-btn-text">Dive In</span>
+        <span class="menu-icon-wrap" aria-hidden="true">
+          <span class="icon-bar horizontal"></span>
+          <span class="icon-bar vertical"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       STAGGERED DRAWER OVERLAY MENU
+       ========================================================================= -->
+  <div class="staggered-drawer" id="staggered-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-prelayer prelayer-1"></div>
+    <div class="drawer-prelayer prelayer-2"></div>
+    <nav class="drawer-panel" aria-label="Drawer Navigation Menu">
+      <div class="drawer-panel-top">
+        <ul class="drawer-nav-list">
+          <li>
+            <a href="#hero" class="drawer-nav-item">
+              <span>Home</span>
+              <span class="drawer-nav-num">00</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="drawer-nav-item">
+              <span>Projects</span>
+              <span class="drawer-nav-num">01</span>
+            </a>
+          </li>
+          <li>
+            <a href="#introduction" class="drawer-nav-item">
+              <span>Philosophy</span>
+              <span class="drawer-nav-num">02</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="drawer-nav-item">
+              <span>Skills</span>
+              <span class="drawer-nav-num">03</span>
+            </a>
+          </li>
+          <li>
+            <a href="#experience" class="drawer-nav-item">
+              <span>Experience</span>
+              <span class="drawer-nav-num">04</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="drawer-nav-item">
+              <span>Contact</span>
+              <span class="drawer-nav-num">05</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="drawer-socials">
+        <span class="drawer-socials-title">Connect</span>
+        <ul class="drawer-socials-list">
+          <li><a href="https://github.com/nika619" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/imayanktiwari/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+          <li><a href="https://contra.com/mayank_tiwari_a4vkcjsh?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=mayank_tiwari_a4vkcjsh" target="_blank" rel="noopener noreferrer">Contra ↗</a></li>
+          <li><a href="mailto:mayank.tiwarii1720@gmail.com">Email ↗</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         01. HERO SECTION (Snap Hero Layout + Three.js 3D Morphing Mesh + Variable Font Pressure)
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <!-- Three.js Interactive 3D WebGL Canvas Container -->
+      <div class="hero-three-container" id="hero-three-container" aria-hidden="true"></div>
+
+      <!-- Vignette & Radiant Depth Lighting -->
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-radiant-glow" aria-hidden="true"></div>
+
+      <!-- Ambient Floating Dust Particles -->
+      <div class="hero-dust-field" aria-hidden="true">
+        <span class="dust-particle" style="top:18%; left:12%; animation-delay:0s; animation-duration:6.2s;"></span>
+        <span class="dust-particle" style="top:25%; left:82%; animation-delay:0.7s; animation-duration:7.1s;"></span>
+        <span class="dust-particle" style="top:44%; left:16%; animation-delay:1.4s; animation-duration:5.8s;"></span>
+        <span class="dust-particle" style="top:62%; left:88%; animation-delay:2.1s; animation-duration:8.2s;"></span>
+        <span class="dust-particle" style="top:75%; left:26%; animation-delay:2.8s; animation-duration:6.9s;"></span>
+        <span class="dust-particle" style="top:84%; left:54%; animation-delay:3.5s; animation-duration:7.4s;"></span>
+        <span class="dust-particle" style="top:36%; left:65%; animation-delay:4.3s; animation-duration:6.1s;"></span>
+        <span class="dust-particle" style="top:52%; left:8%; animation-delay:5.0s; animation-duration:7.7s;"></span>
+      </div>
+
+      <!-- Center Stage: Variable Font Text Pressure Title "MAYANK" -->
+      <div class="hero-center-stage">
+        <div class="text-pressure-wrapper">
+          <h1 class="text-pressure-title" id="text-pressure-title" aria-label="Mayank">
+            <span class="pressure-char" data-char="M">M</span>
+            <span class="pressure-char" data-char="A">A</span>
+            <span class="pressure-char" data-char="Y">Y</span>
+            <span class="pressure-char" data-char="A">A</span>
+            <span class="pressure-char" data-char="N">N</span>
+            <span class="pressure-char" data-char="K">K</span>
+          </h1>
+        </div>
+        <div class="hero-accent-quote" id="hero-quote">
+          <span class="hero-quote-badge">✦ BUILDATHON &amp; HACKATHON FINALIST · RANK #6 NATIONAL</span>
+          <span class="hero-quote-sub">BETTER SYSTEMS. BIGGER DREAMS.</span>
+        </div>
+      </div>
+
+      <!-- Bottom-Left Bio Description -->
+      <div class="hero-bio-box">
+        <p>Final-year CSE at <strong>BBDU Lucknow</strong> (May 2027). National Finalist (Rank #6) AMPlified Season 1, Winner LovHack Season 2. Architect of BackStop, Career PathFinder &amp; ECO-OPS.</p>
+      </div>
+
+      <!-- Bottom-Center Scroll Down Indicator -->
+      <div class="hero-scroll-cue">
+        <span class="scroll-cue-text">SCROLL</span>
+        <div class="scroll-cue-track">
+          <div class="scroll-cue-fill"></div>
+        </div>
+      </div>
+
+      <!-- Bottom-Right Call to Action Buttons -->
+      <div class="hero-actions">
+        <a href="#projects" class="btn-pill btn-primary" id="hero-btn-explore">
+          <span class="btn-arrow-icon" aria-hidden="true">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+              <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          Explore Work →
+        </a>
+        <a href="#contact" class="btn-pill btn-outline" id="hero-btn-talk">
+          <span class="btn-sparkle">✦</span>
+          Let's Talk →
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         MOVING TEXT MARQUEE BAND 1 (Seamless Kinetic Ribbon)
+         ========================================================================= -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>AUTONOMOUS AI SYSTEMS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>PRODUCTION CLOUD ARCHITECTURE</span>
+          <span class="marquee-glyph">✦</span>
+          <span>MERKLE HASH CHAINS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>VECTOR COSINE SIMILARITY</span>
+          <span class="marquee-glyph">✦</span>
+          <span>AST DEPENDENCY PRUNING</span>
+          <span class="marquee-glyph">✦</span>
+          <span>THREE.JS &amp; TSL SHADERS</span>
+          <span class="marquee-glyph">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         02. THE PHILOSOPHY SECTION (Scroll-Expand Cinematic Reveal + Three.js TSL Particle Morph)
+         ========================================================================= -->
+    <section class="philosophy-section" id="introduction">
+      <div class="scroll-expand-container">
+        <div class="scroll-expand-track" id="scroll-expand-track">
+          <!-- Three.js TSL Particle Morph Canvas Overlay -->
+          <div class="philosophy-particle-canvas" id="philosophy-three-container" aria-hidden="true"></div>
+
+          <div class="scroll-expand-stage">
+            <div class="scroll-expand-frame" id="scroll-expand-frame">
+              <div class="reveal-image-container philosophy-media-wrap">
+                <img class="scroll-expand-media" id="scroll-expand-media" src="images/philosophy-bg.jpg" alt="Earth at night seen from space — city lights illuminating the curvature of the planet" loading="lazy">
+              </div>
+              <div class="scroll-expand-scrim" id="scroll-expand-scrim"></div>
+
+              <!-- Quote Overlay with High-Contrast Glass Card -->
+              <div class="scroll-expand-overlay" id="scroll-expand-overlay">
+                <div class="philosophy-quote-card">
+                  <div class="philosophy-badge">
+                    <span class="philosophy-badge-dot"></span>
+                    <span class="philosophy-badge-text">Systems Philosophy</span>
+                  </div>
+                  <blockquote class="philosophy-quote">
+                    “I believe great software is born at the intersection of engineering precision and design intuition. Every pixel, every interaction, every line of code is an opportunity to create something that moves people.”
+                  </blockquote>
+                  <div class="philosophy-author-tag">
+                    <span class="author-dash">—</span>
+                    <span class="author-name">Mayank Tiwari</span>
+                    <span class="author-role">Autonomous Systems Architect · BBDU Lucknow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sticky Stage Overlays -->
+            <h2 class="scroll-expand-title" id="scroll-expand-title">The Philosophy</h2>
+            <div class="scroll-expand-hint" id="scroll-expand-hint">
+              <span class="scroll-expand-hint-dot"></span>
+              <span>Scroll to explore core philosophy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         02B. CURTAIN DOORS CHAMBER // ARCHITECTURAL VAULT
+         Dual split architectural doors that slide apart on scroll,
+         revealing Mayank Tiwari's monumental architectural credentials
+         ========================================================================= -->
+    <section class="suspense-doors-section" id="curtain-doors-chamber" aria-label="Curtain Doors Chamber and Architectural Vault">
+      <div class="doors-scroll-track" id="doors-scroll-track">
+        
+        <!-- Revealed Content Behind The Doors: Mayank Tiwari Architectural Stage -->
+        <div class="prague-stage" id="prague-stage">
+          <div class="prague-bg-media">
+            <img src="images/mayank_suit.jpg" alt="Mayank Tiwari portrait in executive studio lighting" class="prague-img" id="prague-img" loading="lazy">
+            <div class="prague-overlay-scrim"></div>
+            <div class="prague-ambient-glow"></div>
+          </div>
+          
+          <!-- Monumental Architecture Typography & Metadata Overlays -->
+          <div class="prague-content-wrapper">
+            <div class="prague-top-bar">
+              <div class="prague-breadcrumbs">
+                <span class="prague-tag-dot"></span>
+                <span class="prague-geo">26°51'N 80°56'E · LUCKNOW · AUTONOMOUS SYSTEMS ENGINEERING</span>
+              </div>
+              <div class="prague-action-btns">
+                <a href="https://github.com/nika619" target="_blank" rel="noopener noreferrer" class="prague-badge-btn prague-unlock-btn" aria-label="View Mayank Tiwari GitHub Repositories">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                  <span>GITHUB CODEBASES ↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/imayanktiwari/" target="_blank" rel="noopener noreferrer" class="prague-badge-btn prague-cursor-btn" aria-label="Connect with Mayank on LinkedIn">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></svg>
+                  <span>LINKEDIN PROFILE ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Monumental Typography -->
+            <div class="prague-title-container">
+              <span class="prague-kicker-mono">// NATIONAL PODIUMS &amp; PRODUCTION SYSTEMS</span>
+              <h2 class="prague-monumental-text">SYSTEMS BUILDER</h2>
+              <div class="prague-editorial-sub">
+                <span class="prague-serif-accent">Mayank Tiwari</span>
+                <span class="prague-dash">—</span>
+                <span class="prague-mono-tag">RANK #6 NATIONAL FINALIST · LOVHACK WINNER · 14+ PRODUCTION SYSTEMS</span>
+              </div>
+            </div>
+
+            <!-- Midnight Drive Music & Atmosphere Card (Velocity Reigns) -->
+            <div class="midnight-drive-card" id="midnight-drive-widget" role="region" aria-label="Midnight Drive Audio Track">
+              <div class="md-cover-wrap">
+                <img src="images/midnight_drive.png" alt="Midnight Drive — Velocity Reigns" class="md-cover-img" loading="lazy">
+                <button type="button" class="md-play-btn" id="btn-midnight-drive-play" aria-label="Toggle Midnight Drive Synthwave Track">
+                  <span class="md-play-icon" id="md-play-icon">▶</span>
+                </button>
+              </div>
+              <div class="md-info">
+                <div class="md-badge">NOW PLAYING</div>
+                <div class="md-title">Midnight Drive</div>
+                <div class="md-artist">Velocity Reigns</div>
+                <div class="md-eq-bar" id="md-eq-bar">
+                  <span class="md-eq-col"></span>
+                  <span class="md-eq-col"></span>
+                  <span class="md-eq-col"></span>
+                  <span class="md-eq-col"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prague-bottom-bar">
+              <div class="prague-specs-mini">
+                <span class="mini-spec-item"><strong>AMPLIFIED S1</strong> RANK #6 FINALIST</span>
+                <span class="mini-spec-item"><strong>LOVHACK S2</strong> WINNER</span>
+                <span class="mini-spec-item"><strong>SYSTEMS BUILT</strong> 14+ PROJECTS</span>
+              </div>
+              <a href="#horizontal-gallery-section" class="prague-fullscreen-trigger">
+                <span>Explore Flagship Suites</span>
+                <span class="arrow-glyph">›</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual Vertical Split Curtain Doors (Slide apart left & right on scroll) -->
+        <div class="curtain-door curtain-door-left" id="curtain-door-left" aria-hidden="true">
+          <div class="curtain-door-inner">
+            <div class="door-status-pill">
+              <span class="door-pulse-beacon"></span>
+              <span>MAYANK TIWARI // MAY 2027</span>
+            </div>
+            <div class="door-giant-num" style="font-size:clamp(4rem,14vw,9rem);line-height:1;color:#fff;">MT</div>
+            <div class="door-system-name">SYSTEMS BUILDER</div>
+            <div class="door-label">BBDU LUCKNOW · CSE</div>
+          </div>
+          <div class="door-edge-glow door-edge-right"></div>
+        </div>
+
+        <div class="curtain-door curtain-door-right" id="curtain-door-right" aria-hidden="true">
+          <div class="curtain-door-inner">
+            <div class="door-status-pill">
+              <span>14+ PROJECTS SHIPPED</span>
+              <span class="door-accent-tag">NATIONAL FINALIST</span>
+            </div>
+            <div class="door-giant-num" style="font-size:clamp(4rem,14vw,9rem);line-height:1;color:#fff;">14+</div>
+            <div class="door-system-name">SOFTWARE ENGINEER</div>
+            <div class="door-label">SCROLL TO REVEAL</div>
+          </div>
+          <div class="door-edge-glow door-edge-left"></div>
+        </div>
+
+        <!-- Suspense Seam Warning Indicator in the center -->
+        <div class="doors-center-indicator" id="doors-center-indicator" aria-hidden="true">
+          <div class="seam-line"></div>
+          <div class="seam-badge">
+            <span class="seam-dot"></span>
+            <span>SCROLL TO ENTER SYSTEMS VAULT</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         02C. SCROLL HORIZONTAL GALLERY (Tokyo Nights Style — Inspired by Matt Perry)
+         Sticky positioning with scroll-linked horizontal X translation
+         ========================================================================= -->
+    <section class="horizontal-gallery-section" id="horizontal-gallery-section" aria-label="Scroll Horizontal Gallery">
+      <div class="horizontal-scroll-container" id="horizontal-scroll-container">
+        <div class="horizontal-sticky-track" id="horizontal-sticky-track">
+          
+          <!-- Editorial Header Strip -->
+          <div class="gallery-lead-strip">
+            <div class="gallery-lead-left">
+              <div class="gallery-lead-meta-row">
+                <span class="gallery-lead-pill gallery-pill-mono">FLAGSHIP SYSTEMS ARCHITECTURE</span>
+                <span class="gallery-lead-pill gallery-pill-badge">PRODUCTION VERIFIED</span>
+                <span class="gallery-lead-pill gallery-pill-author">
+                  <span class="author-micro-avatar">MT</span>
+                  MAYANK TIWARI · 2026-2027
+                </span>
+              </div>
+              <p class="gallery-sub-lead">
+                Autonomous financial policy gates, multi-agent evaluation DAGs, and serverless compute optimizers engineered for production reliability.
+              </p>
+            </div>
+            <div class="gallery-lead-right">
+              <div class="gallery-nav-hint">
+                <span class="hint-arrow">←</span>
+                <span>SWIPE / DRAG TO INSPECT</span>
+                <span class="hint-arrow">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monumental Section Header Title -->
+          <div class="gallery-title-banner">
+            <h2 class="gallery-huge-title">ENGINEERED SYSTEMS <span class="gallery-title-sub">— FLAGSHIP SUITE</span></h2>
+          </div>
+
+          <!-- Horizontal Rail Track of Cards (Translates sideways along X-axis) -->
+          <div class="horizontal-rail" id="horizontal-rail">
+
+            <!-- Card 1: Parity -->
+            <article class="h-card" data-project-id="parity">
+              <div class="h-card-inner">
+                <div class="h-card-top">
+                  <span class="h-card-num">01 / 04</span>
+                  <span class="h-card-tag tag-accent">WINNER · LOVHACK S2</span>
+                </div>
+                <div class="h-card-media-wrap">
+                  <div class="reveal-image-container">
+                    <img src="images/parity_showcase.png" alt="Parity Autonomous 5-Round AI Voice Debate Arena" class="h-card-img" loading="lazy">
+                  </div>
+                  <div class="h-card-overlay">
+                    <span class="h-overlay-badge">View Live Arena ↗</span>
+                  </div>
+                </div>
+                <div class="h-card-body">
+                  <div class="h-card-title-row">
+                    <h3 class="h-card-title">Parity — AI Voice Debate Arena</h3>
+                  </div>
+                  <p class="h-card-desc">
+                    Autonomous 5-round conversational debate arena with sub-second turnaround latency, voice collision handling, and automated argument scoring.
+                  </p>
+                  <div class="h-card-meta-chips">
+                    <span class="h-chip">GEMINI FLASH</span>
+                    <span class="h-chip">WEB SPEECH API</span>
+                    <span class="h-chip">WEBSOCKET</span>
+                    <span class="h-chip accent-chip">LOVHACK WINNER</span>
+                  </div>
+                  <div class="h-card-actions">
+                    <a href="https://parity-rosy.vercel.app" target="_blank" rel="noopener noreferrer" class="h-btn h-btn-live">Live Debate Arena ↗</a>
+                    <button type="button" class="h-btn h-btn-specs" data-open-modal="parity">System Specs ↗</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Career PathFinder -->
+            <article class="h-card" data-project-id="career-pathfinder">
+              <div class="h-card-inner">
+                <div class="h-card-top">
+                  <span class="h-card-num">02 / 04</span>
+                  <span class="h-card-tag tag-accent">RANK #6 NATIONAL FINALIST · AMPLIFIED S1</span>
+                </div>
+                <div class="h-card-media-wrap">
+                  <div class="reveal-image-container">
+                    <img src="images/career_pathfinder_hero.png" alt="Career PathFinder Autonomous Multi-Agent Guidance Engine" class="h-card-img" loading="lazy">
+                  </div>
+                  <div class="h-card-overlay">
+                    <span class="h-overlay-badge">View Architecture Specs ↗</span>
+                  </div>
+                </div>
+                <div class="h-card-body">
+                  <div class="h-card-title-row">
+                    <h3 class="h-card-title">Career PathFinder — Guidance Engine</h3>
+                  </div>
+                  <p class="h-card-desc">
+                    National Finalist in AMPlified Season 1. Multi-agent syllabus gap analyzer computing 300D vector cosine similarities against 900+ O*NET occupational codes.
+                  </p>
+                  <div class="h-card-meta-chips">
+                    <span class="h-chip">PYTHON</span>
+                    <span class="h-chip">VECTOR COSINE</span>
+                    <span class="h-chip">MULTI-AGENT DAG</span>
+                    <span class="h-chip accent-chip">54/54 TESTS PASS</span>
+                  </div>
+                  <div class="h-card-actions">
+                    <a href="https://github.com/nika619/Career-pathfinder-nika619" target="_blank" rel="noopener noreferrer" class="h-btn h-btn-live">GitHub Repository ↗</a>
+                    <a href="https://www.hackerearth.com/challenges/hackathon/amplified-season-1/" target="_blank" rel="noopener noreferrer" class="h-btn h-btn-specs">AMPlified Finals ↗</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: ECO-OPS -->
+            <article class="h-card" data-project-id="eco-ops">
+              <div class="h-card-inner">
+                <div class="h-card-top">
+                  <span class="h-card-num">03 / 04</span>
+                  <span class="h-card-tag tag-accent">GITLAB AI HACKATHON · GCP RUN</span>
+                </div>
+                <div class="h-card-media-wrap">
+                  <div class="reveal-image-container">
+                    <img src="images/eco_ops_showcase.png" alt="ECO-OPS Intelligent CI Compute Optimizer on Google Cloud Run" class="h-card-img" loading="lazy">
+                  </div>
+                  <div class="h-card-overlay">
+                    <span class="h-overlay-badge">View Architecture Specs ↗</span>
+                  </div>
+                </div>
+                <div class="h-card-body">
+                  <div class="h-card-title-row">
+                    <h3 class="h-card-title">ECO-OPS — CI Compute Optimizer</h3>
+                  </div>
+                  <p class="h-card-desc">
+                    Analyzes CI pipeline AST dependency graphs and prunes redundant build cycles, eliminating ~1,680 minutes/month of wasteful cloud compute on Cloud Run.
+                  </p>
+                  <div class="h-card-meta-chips">
+                    <span class="h-chip">GOOGLE CLOUD RUN</span>
+                    <span class="h-chip">AST DAG PRUNING</span>
+                    <span class="h-chip">FASTAPI</span>
+                    <span class="h-chip accent-chip">~1,680m SAVED/MO</span>
+                  </div>
+                  <div class="h-card-actions">
+                    <a href="https://github.com/nika619/ecoops" target="_blank" rel="noopener noreferrer" class="h-btn h-btn-live">GitHub Repository ↗</a>
+                    <button type="button" class="h-btn h-btn-specs" data-open-modal="eco-ops">System Specs ↗</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: BackStop -->
+            <article class="h-card" data-project-id="backstop">
+              <div class="h-card-inner">
+                <div class="h-card-top">
+                  <span class="h-card-num">04 / 04</span>
+                  <span class="h-card-tag tag-accent">PRODUCTION VERIFIED · POLICY GATE</span>
+                </div>
+                <div class="h-card-media-wrap">
+                  <div class="reveal-image-container">
+                    <img src="images/backstop_showcase.png" alt="BackStop Deterministic Financial Policy Gate and Merkle Chain" class="h-card-img" loading="lazy">
+                  </div>
+                  <div class="h-card-overlay">
+                    <span class="h-overlay-badge">View Architecture Specs ↗</span>
+                  </div>
+                </div>
+                <div class="h-card-body">
+                  <div class="h-card-title-row">
+                    <h3 class="h-card-title">BackStop — Deterministic Policy Gate</h3>
+                  </div>
+                  <p class="h-card-desc">
+                    Enforces RBI 72h cooldown &amp; TRAI windowing via client-side SHA-256 Merkle chain. Isolates autonomous revenue recovery from financial mutation risk.
+                  </p>
+                  <div class="h-card-meta-chips">
+                    <span class="h-chip">FASTAPI</span>
+                    <span class="h-chip">REACT 19</span>
+                    <span class="h-chip">SHA-256 MERKLE</span>
+                    <span class="h-chip accent-chip">82/82 SUITES PASS</span>
+                  </div>
+                  <div class="h-card-actions">
+                    <a href="https://github.com/nika619/BackStop-" target="_blank" rel="noopener noreferrer" class="h-btn h-btn-live">GitHub Repository ↗</a>
+                    <button type="button" class="h-btn h-btn-specs" data-open-modal="backstop">System Specs ↗</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         03. SELECTED PROJECTS SECTION (Matching handcraft_projects.png 2x2 Grid)
+         ========================================================================= -->
+    <section class="projects-section" id="projects">
+      <div class="projects-container">
+        <!-- Section Header with Multiple Typography and Kinetic Line Reveal -->
+        <div class="section-header-center reveal-editorial">
+          <span class="section-tag-pill font-mono">— 03 // ARCHITECTURAL SHOWCASE</span>
+          <h2 class="section-heading-huge font-editorial">
+            <span class="serif-flair">Selected</span> <span class="sans-lead">Projects</span>
+          </h2>
+          <p class="section-subtext font-body">From autonomous financial policy gates to full-stack web systems — crafted with motion, purpose, and mathematical precision.</p>
+        </div>
+
+        <!-- Filter / View Modes Bar -->
+        <div class="projects-filter-bar">
+          <span class="filter-pill-badge" style="display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:rgba(252,91,46,0.12);border:1px solid rgba(252,91,46,0.4);font-family:var(--font-mono);font-size:0.75rem;font-weight:700;color:var(--accent-bright);letter-spacing:0.12em;">
+            <span class="door-pulse-beacon" style="width:7px;height:7px;"></span>
+            14+ PRODUCTION SYSTEMS BUILT
+          </span>
+          <button class="filter-pill-btn active" data-filter="grid" id="btn-filter-showcase">
+            FEATURED SHOWCASE (2X2 GRID)
+          </button>
+          <button class="filter-pill-btn" data-filter="detailed" id="btn-filter-detailed">
+            DEEP CASE STUDIES
+          </button>
+        </div>
+
+        <!-- 2x2 FEATURED SHOWCASE GRID (Mayank Tiwari Audited Flagship Systems) -->
+        <div class="showcase-grid-wrap" id="showcase-grid-view">
+          
+          <!-- Card 1: Parity (LovHack Season 2 — Winner) -->
+          <article class="showcase-card tilt-card" data-project-id="parity">
+            <div class="showcase-mock-top">
+              <div class="mock-dots">
+                <span class="mock-dot dot-accent"></span>
+                <span class="mock-dot dot-yellow"></span>
+                <span class="mock-dot dot-green"></span>
+              </div>
+              <span class="mock-title">parity-rosy.vercel.app</span>
+              <span class="showcase-card-num">01 / 04</span>
+            </div>
+            <div class="showcase-img-wrap" tabindex="0" role="button" aria-label="Open Parity AI Voice Debate project preview">
+              <div class="reveal-image-container">
+                <img src="images/parity_showcase.png" alt="Parity Autonomous 5-Round AI Voice Debate Arena" loading="lazy">
+              </div>
+              <div class="img-hover-overlay">
+                <span class="overlay-badge">View Case Study ↗</span>
+              </div>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-header">
+                <h3 class="showcase-card-title">Parity — AI Voice Debate Arena</h3>
+              </div>
+              <p class="showcase-card-desc">Winner at LovHack Season 2. Autonomous 5-round AI voice debate arena with sub-second turnaround latency, conversational collision detection, and automated argument judging.</p>
+              <div class="showcase-tags">
+                <span class="tag-badge">Gemini Flash</span>
+                <span class="tag-badge">Web Speech API</span>
+                <span class="tag-badge">WebSocket</span>
+                <span class="tag-badge">React</span>
+              </div>
+              <div class="showcase-actions">
+                <a href="https://parity-rosy.vercel.app" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">Live Arena ↗</a>
+                <a href="https://github.com/nika619" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-github">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Career PathFinder (AMPlified Season 1 National Finalist) -->
+          <article class="showcase-card tilt-card" data-project-id="career-pathfinder">
+            <div class="showcase-mock-top">
+              <div class="mock-dots">
+                <span class="mock-dot dot-accent"></span>
+                <span class="mock-dot dot-yellow"></span>
+                <span class="mock-dot dot-green"></span>
+              </div>
+              <span class="mock-title">career-pathfinder.ai</span>
+              <span class="showcase-card-num">02 / 04</span>
+            </div>
+            <div class="showcase-img-wrap" tabindex="0" role="button" aria-label="Open Career PathFinder project preview">
+              <div class="reveal-image-container">
+                <img src="images/career_pathfinder_hero.png" alt="Career PathFinder Autonomous Multi-Agent Guidance Engine" loading="lazy">
+              </div>
+              <div class="img-hover-overlay">
+                <span class="overlay-badge">View Case Study ↗</span>
+              </div>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-header">
+                <h3 class="showcase-card-title">Career PathFinder — Guidance Engine</h3>
+              </div>
+              <p class="showcase-card-desc">National Finalist (Rank #6 Nationwide) in AMPlified Season 1. Multi-agent syllabus gap engine matching 300D vector cosine similarity against 900+ O*NET occupational codes. 54/54 tests pass.</p>
+              <div class="showcase-tags">
+                <span class="tag-badge">Python</span>
+                <span class="tag-badge">Vector Cosine</span>
+                <span class="tag-badge">Multi-Agent DAG</span>
+                <span class="tag-badge">FastAPI</span>
+              </div>
+              <div class="showcase-actions">
+                <a href="https://github.com/nika619/Career-pathfinder-nika619" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">GitHub Repository ↗</a>
+                <a href="https://www.hackerearth.com/challenges/hackathon/amplified-season-1/" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-github">AMPlified Finals ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: ECO-OPS (GitLab AI Hackathon — GCP Cloud Run) -->
+          <article class="showcase-card tilt-card" data-project-id="eco-ops">
+            <div class="showcase-mock-top">
+              <div class="mock-dots">
+                <span class="mock-dot dot-accent"></span>
+                <span class="mock-dot dot-yellow"></span>
+                <span class="mock-dot dot-green"></span>
+              </div>
+              <span class="mock-title">eco-ops.cloudrun.app</span>
+              <span class="showcase-card-num">03 / 04</span>
+            </div>
+            <div class="showcase-img-wrap" tabindex="0" role="button" aria-label="Open ECO-OPS project preview">
+              <div class="reveal-image-container">
+                <img src="images/eco_ops_showcase.png" alt="ECO-OPS Intelligent CI Compute Optimizer on Google Cloud Run" loading="lazy">
+              </div>
+              <div class="img-hover-overlay">
+                <span class="overlay-badge">View Case Study ↗</span>
+              </div>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-header">
+                <h3 class="showcase-card-title">ECO-OPS — Intelligent CI Compute Optimizer</h3>
+              </div>
+              <p class="showcase-card-desc">Built for GitLab AI Hackathon. AST dependency subtree analysis &amp; Tarjan's Strongly Connected Components DAG cycle pruning on GCP Cloud Run saving ~1,680 min/mo of runner compute.</p>
+              <div class="showcase-tags">
+                <span class="tag-badge">GCP Cloud Run</span>
+                <span class="tag-badge">Python AST</span>
+                <span class="tag-badge">Tarjan SCC</span>
+                <span class="tag-badge">Docker</span>
+              </div>
+              <div class="showcase-actions">
+                <a href="https://github.com/nika619/ecoops" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">GitHub Repository ↗</a>
+                <button type="button" class="card-action-btn btn-card-github" data-open-modal="eco-ops">System Specs ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: BackStop (Deterministic Policy Gate & Merkle Chain) -->
+          <article class="showcase-card tilt-card" data-project-id="backstop">
+            <div class="showcase-mock-top">
+              <div class="mock-dots">
+                <span class="mock-dot dot-accent"></span>
+                <span class="mock-dot dot-yellow"></span>
+                <span class="mock-dot dot-green"></span>
+              </div>
+              <span class="mock-title">backstop-policy.dev</span>
+              <span class="showcase-card-num">04 / 04</span>
+            </div>
+            <div class="showcase-img-wrap" tabindex="0" role="button" aria-label="Open BackStop project preview">
+              <div class="reveal-image-container">
+                <img src="images/backstop_showcase.png" alt="BackStop Deterministic Policy Gate and Merkle Chain Architecture" loading="lazy">
+              </div>
+              <div class="img-hover-overlay">
+                <span class="overlay-badge">View Case Study ↗</span>
+              </div>
+            </div>
+            <div class="showcase-card-body">
+              <div class="showcase-card-header">
+                <h3 class="showcase-card-title">BackStop — Deterministic Policy Gate</h3>
+              </div>
+              <p class="showcase-card-desc">Deterministic AI revenue recovery engine enforcing RBI 72h cooldown and TRAI windowing via client-side SHA-256 Merkle chain. 82/82 passing test suites.</p>
+              <div class="showcase-tags">
+                <span class="tag-badge">FastAPI</span>
+                <span class="tag-badge">React 19</span>
+                <span class="tag-badge">Web Crypto</span>
+                <span class="tag-badge">SHA-256 Merkle</span>
+              </div>
+              <div class="showcase-actions">
+                <a href="https://github.com/nika619/BackStop-" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">GitHub Repository ↗</a>
+                <button type="button" class="card-action-btn btn-card-github" data-open-modal="backstop">System Specs ↗</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- DETAILED CASE STUDIES VIEW (Alternate View) -->
+        <div class="detailed-projects-list" id="detailed-projects-view" style="display: none;">
+          
+          <!-- Detailed 1: Parity -->
+          <div class="detailed-card tilt-card" data-project-id="parity">
+            <div class="detailed-ambient-glow"></div>
+            <div class="detailed-grid">
+              <div class="detailed-content">
+                <div class="detailed-header-row">
+                  <span class="tag-badge accent-badge">01 / 04 · LOVHACK S2 WINNER</span>
+                  <a href="https://parity-rosy.vercel.app" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">Live Arena ↗</a>
+                </div>
+                <h3 class="detailed-title">Parity — Autonomous 5-Round AI Voice Debate Arena</h3>
+                <p class="detailed-desc">Winner at LovHack Season 2. Autonomous conversational debate arena operating sub-second turnaround latency using Gemini Flash, live speech collision detection, and automated argument judging algorithms across 5 intense debate rounds.</p>
+                <div class="showcase-tags">
+                  <span class="tag-badge">GEMINI FLASH</span>
+                  <span class="tag-badge">WEB SPEECH API</span>
+                  <span class="tag-badge">WEBSOCKET</span>
+                  <span class="tag-badge">REACT</span>
+                </div>
+              </div>
+              <div class="detailed-preview">
+                <div class="reveal-image-container">
+                  <img src="images/parity_showcase.png" alt="Parity AI Voice Debate Arena" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed 2: Career PathFinder -->
+          <div class="detailed-card tilt-card" data-project-id="career-pathfinder">
+            <div class="detailed-ambient-glow"></div>
+            <div class="detailed-grid">
+              <div class="detailed-content">
+                <div class="detailed-header-row">
+                  <span class="tag-badge accent-badge">02 / 04 · RANK #6 NATIONWIDE</span>
+                  <a href="https://github.com/nika619/Career-pathfinder-nika619" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">Repository ↗</a>
+                </div>
+                <h3 class="detailed-title">Career PathFinder — Autonomous Guidance Engine</h3>
+                <p class="detailed-desc">Developed for AMPlified Season 1, where it secured Rank #6 nationwide among thousands of engineering teams. Computes 300-dimensional vector embeddings of engineering university syllabi and compares them in real time against 900+ O*NET occupational requirements to highlight prerequisite gaps.</p>
+                <div class="showcase-tags">
+                  <span class="tag-badge">PYTHON</span>
+                  <span class="tag-badge">VECTOR COSINE SIMILARITY</span>
+                  <span class="tag-badge">MULTI-AGENT DAG</span>
+                  <span class="tag-badge">FASTAPI</span>
+                </div>
+              </div>
+              <div class="detailed-preview">
+                <div class="reveal-image-container">
+                  <img src="images/career_pathfinder_hero.png" alt="Career PathFinder Engine" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed 3: ECO-OPS -->
+          <div class="detailed-card tilt-card" data-project-id="eco-ops">
+            <div class="detailed-ambient-glow"></div>
+            <div class="detailed-grid">
+              <div class="detailed-content">
+                <div class="detailed-header-row">
+                  <span class="tag-badge accent-badge">03 / 04 · GITLAB AI HACKATHON</span>
+                  <a href="https://github.com/nika619/ecoops" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">Repository ↗</a>
+                </div>
+                <h3 class="detailed-title">ECO-OPS — Intelligent CI Compute Optimizer</h3>
+                <p class="detailed-desc">Cuts wasteful cloud runner compute on Google Cloud Platform by parsing commit diffs into Abstract Syntax Trees and applying Tarjan's Strongly Connected Components algorithm to prune test matrix DAGs. Saves ~1,680 minutes of runner compute monthly with zero cloud overhead.</p>
+                <div class="showcase-tags">
+                  <span class="tag-badge">GCP CLOUD RUN</span>
+                  <span class="tag-badge">PYTHON AST</span>
+                  <span class="tag-badge">TARJAN SCC</span>
+                  <span class="tag-badge">DOCKER</span>
+                </div>
+              </div>
+              <div class="detailed-preview">
+                <div class="reveal-image-container">
+                  <img src="images/eco_ops_showcase.png" alt="ECO-OPS CI Optimization" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detailed 4: BackStop -->
+          <div class="detailed-card tilt-card" data-project-id="backstop">
+            <div class="detailed-ambient-glow"></div>
+            <div class="detailed-grid">
+              <div class="detailed-content">
+                <div class="detailed-header-row">
+                  <span class="tag-badge accent-badge">04 / 04 · FLAGSHIP</span>
+                  <a href="https://github.com/nika619/BackStop-" target="_blank" rel="noopener noreferrer" class="card-action-btn btn-card-live">Repository ↗</a>
+                </div>
+                <h3 class="detailed-title">BackStop — Deterministic AI Policy Gate</h3>
+                <p class="detailed-desc">Solves a critical flaw in autonomous financial AI: non-deterministic execution risks. BackStop guarantees that language models never directly execute financial state mutations, isolating AI actions behind cryptographically verified Merkle chains and statutory cooling-off timers compliant with RBI 2026 mandates.</p>
+                <div class="showcase-tags">
+                  <span class="tag-badge">FASTAPI</span>
+                  <span class="tag-badge">REACT 19</span>
+                  <span class="tag-badge">SHA-256 MERKLE</span>
+                  <span class="tag-badge">82/82 TESTS PASS</span>
+                </div>
+              </div>
+              <div class="detailed-preview">
+                <div class="reveal-image-container">
+                  <img src="images/backstop_showcase.png" alt="BackStop Architecture" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         MOVING TEXT MARQUEE BAND 2 (Reverse Direction)
+         ========================================================================= -->
+    <div class="marquee-strip marquee-reverse" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>OPEN FOR SELECTIVE CLIENT COMMISSIONS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>PRODUCTION-READY SYSTEMS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>WORLDWIDE REMOTE COLLABORATION</span>
+          <span class="marquee-glyph">✦</span>
+          <span>TURNING IDEAS INTO REALITY</span>
+          <span class="marquee-glyph">✦</span>
+          <span>SCALABLE ARCHITECTURE</span>
+          <span class="marquee-glyph">✦</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span>OPEN FOR SELECTIVE CLIENT COMMISSIONS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>PRODUCTION-READY SYSTEMS</span>
+          <span class="marquee-glyph">✦</span>
+          <span>WORLDWIDE REMOTE COLLABORATION</span>
+          <span class="marquee-glyph">✦</span>
+          <span>TURNING IDEAS INTO REALITY</span>
+          <span class="marquee-glyph">✦</span>
+          <span>SCALABLE ARCHITECTURE</span>
+          <span class="marquee-glyph">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         04. SKILLS CONSTELLATION SECTION (Unified Dark Obsidian Canvas)
+         ========================================================================= -->
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <div class="section-header-center">
+          <span class="section-tag-pill heading-fade-in">— CAPABILITIES &amp; STACK</span>
+          <h2 class="section-heading-huge heading-fade-in" style="transition-delay:0.12s">Tools I Work With</h2>
+          <p class="section-subtext heading-fade-in" style="transition-delay:0.22s">A curated selection of languages, 3D engines, frameworks, and cloud infrastructure engineered for zero latency and high visual impact.</p>
+        </div>
+
+        <!-- Filter Category Pills -->
+        <div class="skills-filter-bar" role="tablist">
+          <button class="filter-pill-btn active" data-skill-cat="all">All Disciplines</button>
+          <button class="filter-pill-btn" data-skill-cat="frontend">Frontend &amp; 3D</button>
+          <button class="filter-pill-btn" data-skill-cat="backend">Backend &amp; Cloud</button>
+          <button class="filter-pill-btn" data-skill-cat="languages">Languages</button>
+          <button class="filter-pill-btn" data-skill-cat="ai">AI / ML</button>
+        </div>
+
+        <!-- Live Architecture Context Terminal (Typewriter Context Switcher) -->
+        <div class="skills-terminal-bar" id="skills-terminal-bar">
+          <div class="terminal-bar-top">
+            <div class="terminal-dots">
+              <span class="t-dot dot-red"></span>
+              <span class="t-dot dot-yellow"></span>
+              <span class="t-dot dot-green"></span>
+              <span class="t-title">mayank@bbdu-arch: ~/capabilities</span>
+            </div>
+            <div class="terminal-status-badge">
+              <span class="beacon-pulse-dot"></span>
+              <span>LIVE ARCHITECTURE CONTEXT</span>
+            </div>
+          </div>
+          <div class="terminal-stream-row">
+            <span class="terminal-prompt">nika619@system:~$</span>
+            <span class="terminal-typed-cmd" id="skills-context-typewriter">inspect --discipline "ALL" // 82/82 suites passing · Merkle SHA-256 · 300D vector cosine · GCP Cloud Run</span><span class="terminal-caret">▋</span>
+          </div>
+        </div>
+
+        <!-- Skills Grid Matrix (Mayank Tiwari Core Competencies) -->
+        <div class="skills-grid" id="skills-grid">
+          
+          <div class="skill-card tilt-card" data-cat="ai">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">✦</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Gemini &amp; Multi-Agent DAGs</h3>
+              <span class="skill-sub">Autonomous Orchestration</span>
+            </div>
+            <p class="skill-desc">Gemini 2.5 Flash, DeepSeek-R1 local Ollama IPC, stateful multi-agent DAGs, and deterministic tool-calling workflows.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">96% // PRODUCTION VERIFIED</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:96%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="ai">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">📐</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Vector Embeddings &amp; Cosine</h3>
+              <span class="skill-sub">High-Dimensional Matching</span>
+            </div>
+            <p class="skill-desc">300D dense vector similarity, O*NET occupational code clustering, curriculum alignment, and retrieval scoring.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">91% // DEPLOYMENT VERIFIED</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:91%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="languages">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">🐍</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Python &amp; FastAPI</h3>
+              <span class="skill-sub">High-Throughput Backends</span>
+            </div>
+            <p class="skill-desc">Asynchronous microservices, AST parsing, Tarjan's SCC cycle pruning, Pydantic strict schemas, and 82/82 passing tests.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">94% // 82/82 TESTS PASS</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:94%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="backend">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">🔒</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Merkle Chains &amp; Policy Gates</h3>
+              <span class="skill-sub">Financial AI Governance</span>
+            </div>
+            <p class="skill-desc">Client-side Web Crypto SHA-256 Merkle root hashing, RBI 2026 72h cooling-off policy enforcement, and audit logs.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">88% // RBI 2026 COMPLIANT</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:88%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="backend">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">☁</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">GCP Cloud Run &amp; Docker</h3>
+              <span class="skill-sub">FinOps &amp; Infrastructure</span>
+            </div>
+            <p class="skill-desc">Serverless container deployment, CI/CD runner optimization saving ~1,680 min/mo, minimal cold-start configuration.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">85% // CLOUD RUN CERTIFIED</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:85%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="frontend">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">⚛</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">React 19 &amp; TypeScript</h3>
+              <span class="skill-sub">Modern Web Systems</span>
+            </div>
+            <p class="skill-desc">Vite 8, strict type-safety, reactive state pipelines, modern CSS architecture, and sub-second client latency.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">93% // PRODUCTION SHIPS</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:93%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="frontend">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">⚡</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Three.js &amp; WebGL TSL</h3>
+              <span class="skill-sub">3D &amp; GPU Morphing</span>
+            </div>
+            <p class="skill-desc">Particle morphing shaders, simplex noise vertex displacement, iridescent Fresnel materials, and 60/120fps motion.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">90% // HARDWARE ACCELERATED</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:90%"></div></div>
+            </div>
+          </div>
+
+          <div class="skill-card tilt-card" data-cat="frontend,ai">
+            <div class="skill-icon-wrap">
+              <span class="skill-glyph">🎙</span>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">Web Speech &amp; WebSockets</h3>
+              <span class="skill-sub">Real-Time Voice Arbiters</span>
+            </div>
+            <p class="skill-desc">Sub-second voice turnaround, collision detection, live audio streaming, and automated debate scoring.</p>
+            <div class="skill-meter-wrap">
+              <div class="skill-meter-meta"><span class="skill-meter-label">PROFICIENCY</span><span class="skill-meter-val">87% // LOVHACK WINNER</span></div>
+              <div class="skill-meter-track"><div class="skill-meter-fill" style="--skill-pct:87%"></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         05. EXPERIENCE SECTION (Audited Milestones & Honors)
+         ========================================================================= -->
+    <section class="experience-section" id="experience">
+      <div class="experience-glow-ambient" aria-hidden="true"></div>
+      <div class="experience-container">
+        <div class="section-header-center">
+          <span class="section-tag-pill">— JOURNEY &amp; MILESTONES</span>
+          <h2 class="section-heading-huge">Audited Podiums &amp; Milestones</h2>
+          <p class="section-subtext">Competitive hackathon championships, production cloud architectures, and academic engineering rigor.</p>
+        </div>
+
+        <div class="experience-list">
+          
+          <!-- Milestone 1: LovHack Season 2 Champion -->
+          <div class="exp-item reveal-on-scroll">
+            <div class="exp-left">
+              <span class="exp-date">2026 · LovHack</span>
+              <span class="exp-type">Championship Winner 🏆</span>
+            </div>
+            <div class="exp-right">
+              <h3 class="exp-role">Winner — LovHack Season 2 (Parity)</h3>
+              <p class="exp-desc">Architected Parity, an autonomous 5-round AI voice debate arena with sub-second turnaround latency, conversational collision detection, and automated argument judging.</p>
+              <ul class="exp-bullets">
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Won overall championship in national competition against dozens of specialized AI products</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Integrated real-time Web Speech recognition with Gemini 2.5 Flash stream evaluation</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Deployed live at <a href="https://parity-rosy.vercel.app" target="_blank" rel="noopener noreferrer" style="color:var(--accent); text-decoration:underline;">parity-rosy.vercel.app</a></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Milestone 2: AMPlified Season 1 National Finalist -->
+          <div class="exp-item reveal-on-scroll">
+            <div class="exp-left">
+              <span class="exp-date">2026 · HCLTech</span>
+              <span class="exp-type">Rank #6 Nationwide 🎖</span>
+            </div>
+            <div class="exp-right">
+              <h3 class="exp-role">National Finalist (Rank #6) — AMPlified Season 1</h3>
+              <p class="exp-desc">Built Career PathFinder, an autonomous multi-agent guidance platform matching 300D vector cosine embeddings of university coursework against 900+ O*NET codes.</p>
+              <ul class="exp-bullets">
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Secured Rank #6 Nationwide among thousands of participating teams on HackerEarth</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Passed 54/54 automated test suites validating graph traversal and cosine similarity</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Presented deterministic curriculum gap visualization to national jury</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Milestone 3: BackStop Flagship Protocol -->
+          <div class="exp-item reveal-on-scroll">
+            <div class="exp-left">
+              <span class="exp-date">2026 · FLAGSHIP</span>
+              <span class="exp-type">Systems Engineer</span>
+            </div>
+            <div class="exp-right">
+              <h3 class="exp-role">BackStop — Deterministic Policy Gate &amp; Merkle Chain</h3>
+              <p class="exp-desc">Engineered deterministic policy-gated revenue recovery engine enforcing RBI 2026 72h cooling-off and TRAI windowing via client-side SHA-256 Merkle chain.</p>
+              <ul class="exp-bullets">
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Engineered zero-error policy evaluation with 82/82 comprehensive passing tests</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Built interactive Web Crypto SHA-256 hasher for immutable transaction verification</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Constructed FastAPI + React 19 / Vite 8 production interface</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Milestone 4: GitLab AI Hackathon -->
+          <div class="exp-item reveal-on-scroll">
+            <div class="exp-left">
+              <span class="exp-date">2026 · GitLab</span>
+              <span class="exp-type">Production Cloud Run</span>
+            </div>
+            <div class="exp-right">
+              <h3 class="exp-role">GitLab AI Hackathon — ECO-OPS Optimizer</h3>
+              <p class="exp-desc">Created AST dependency subtree analysis &amp; Tarjan's SCC DAG cycle pruning cutting ~1,680 min/mo of runner compute on Google Cloud Platform with $0 cloud cost.</p>
+              <ul class="exp-bullets">
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Eliminated redundant test runner cycles via topological DAG pruning</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Containerized on GCP Cloud Run for zero-overhead serverless execution</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Milestone 5: BBDU Lucknow Degree -->
+          <div class="exp-item reveal-on-scroll">
+            <div class="exp-left">
+              <span class="exp-date">2023 — May 2027</span>
+              <span class="exp-type">Academic Foundation</span>
+            </div>
+            <div class="exp-right">
+              <h3 class="exp-role">B.Tech in Computer Science &amp; Engineering</h3>
+              <p class="exp-desc">Babu Banarasi Das University (BBDU), Lucknow. Deep study of operating systems, network protocols, database internals, and computational graph algorithms.</p>
+              <ul class="exp-bullets">
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Graduating May 2027 · Available for high-impact AI Engineering and Systems roles</span>
+                </li>
+                <li>
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Active leader in university technical builds and competitive national hackathons</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         06. CONTACT SECTION (Let's Create Something Extraordinary)
+         ========================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="contact-glow-ambient" aria-hidden="true"></div>
+      <div class="contact-container">
+        <div class="section-header-center">
+          <span class="section-tag-pill">— GET IN TOUCH</span>
+          <h2 class="section-heading-huge">Let's Build Something Extraordinary</h2>
+          <p class="section-subtext">Looking for an engineer who builds systems that solve real problems? Reach out directly or launch the architectural passport.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details Card with Real Photo -->
+          <div class="glass-card contact-details-box reveal-on-scroll">
+            <div class="contact-profile-header">
+              <div class="contact-avatar-wrap">
+                <img src="images/mayank_suit.jpg" alt="Mayank Tiwari portrait" class="contact-avatar-img">
+                <span class="contact-avatar-status" title="Active &amp; Ready for Roles"></span>
+              </div>
+              <div>
+                <h3 class="card-title" style="margin-bottom: 4px;">Mayank Tiwari</h3>
+                <p style="font-size: 0.85rem; color: var(--accent); font-family: var(--font-mono);">nika619 · BBDU Lucknow</p>
+              </div>
+            </div>
+            
+            <div class="info-item-list" style="margin-top: 20px;">
+              <!-- Email Item with Copy Trigger -->
+              <div class="info-item">
+                <span class="info-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-label">Direct Email</p>
+                  <button type="button" class="info-val-btn" id="copy-email-btn" title="Click to copy email address">
+                    mayank.tiwarii1720@gmail.com
+                    <span class="copy-badge" id="copy-badge">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Location Item -->
+              <div class="info-item">
+                <span class="info-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <div>
+                  <p class="info-label">Base Location</p>
+                  <p class="info-val">Lucknow, India (26.8467° N, 80.9462° E) · Worldwide Remote</p>
+                </div>
+              </div>
+
+              <!-- Availability Beacon -->
+              <div class="info-item">
+                <span class="availability-beacon">
+                  <span class="beacon-core-dot"></span>
+                  <span class="beacon-pulse-ring"></span>
+                </span>
+                <div>
+                  <p class="info-label">Current Status</p>
+                  <p class="info-val availability-highlight">Available for AI &amp; Cloud Engineering Roles · May 2027</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links Row -->
+            <!-- Social Links Row -->
+            <div class="socials-box">
+              <p class="info-label">Verified Networks</p>
+              <div class="socials-icons-row">
+                <a href="https://github.com/nika619" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub (@nika619)">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"></path>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/imayanktiwari/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn Profile">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                  </svg>
+                </a>
+                <a href="https://contra.com/mayank_tiwari_a4vkcjsh?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=mayank_tiwari_a4vkcjsh" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Contra Profile &amp; Independent Work">
+                  <span style="font-family: var(--font-display); font-weight: 800; font-size: 0.9rem; line-height: 1;">C</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Message Form -->
+          <div class="glass-card contact-form-box reveal-on-scroll">
+            <h3 class="card-title">Send a Message</h3>
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="alex@company.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message &amp; Project Details</label>
+                <textarea id="contact-message" name="message" class="form-textarea" placeholder="Describe your vision, timeline, and goals..." required rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn" id="contact-submit-btn">
+                <span>Send Message</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                  <path d="M14 2L7 9M14 2L10 14L7 9M14 2L2 6L7 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <span class="footer-logo">MT<span class="brand-dot">.</span></span>
+            <p class="footer-copy">© 2026 Mayank Tiwari. Handcrafted with precision &amp; Three.js.</p>
+          </div>
+          <div class="footer-legal-nav">
+            <a href="#projects" class="footer-legal-link">WORK</a>
+            <button type="button" class="footer-legal-link" id="btn-privacy-modal">PRIVACY</button>
+            <button type="button" class="footer-legal-link" id="btn-terms-modal">TERMS</button>
+          </div>
+          <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Scroll back to top">
+            <span>Back to top</span>
+            <span class="back-to-top-arrow">↑</span>
+          </button>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       PROJECT LIGHTBOX MODAL
+       ========================================================================= -->
+  <div class="project-modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-chrome-bar">
+        <div class="mock-dots">
+          <span class="mock-dot dot-red" id="modal-close-dot"></span>
+          <span class="mock-dot dot-yellow"></span>
+          <span class="mock-dot dot-green"></span>
+        </div>
+        <span class="modal-chrome-title" id="modal-chrome-title">project.preview</span>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-media-wrap">
+          <img src="" alt="" id="modal-img" class="modal-img">
+        </div>
+        <div class="modal-details">
+          <h3 class="modal-title" id="modal-title"></h3>
+          <p class="modal-desc" id="modal-desc"></p>
+          <div class="modal-tags" id="modal-tags"></div>
+          <div class="modal-links" id="modal-links"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       COMMAND PALETTE (⌘K SEARCH MODAL)
+       ========================================================================= -->
+  <div class="cmd-palette-overlay" id="cmd-palette-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="cmd-palette-box">
+      <div class="cmd-palette-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="cmd-palette-input" placeholder="Type a command or jump to section..." autocomplete="off">
+        <span class="cmd-esc-tag">ESC</span>
+      </div>
+      <ul class="cmd-results-list" id="cmd-results-list">
+        <li class="cmd-item" data-action="goto" data-target="hero">
+          <span class="cmd-item-icon">⚡</span>
+          <span class="cmd-item-title">Jump to Home Hero</span>
+          <span class="cmd-item-key">00</span>
+        </li>
+        <li class="cmd-item" data-action="goto" data-target="projects">
+          <span class="cmd-item-icon">💼</span>
+          <span class="cmd-item-title">View Selected Projects</span>
+          <span class="cmd-item-key">01</span>
+        </li>
+        <li class="cmd-item" data-action="goto" data-target="introduction">
+          <span class="cmd-item-icon">✦</span>
+          <span class="cmd-item-title">Explore The Philosophy</span>
+          <span class="cmd-item-key">02</span>
+        </li>
+        <li class="cmd-item" data-action="goto" data-target="skills">
+          <span class="cmd-item-icon">🛠</span>
+          <span class="cmd-item-title">Inspect Capabilities &amp; Skills</span>
+          <span class="cmd-item-key">03</span>
+        </li>
+        <li class="cmd-item" data-action="goto" data-target="experience">
+          <span class="cmd-item-icon">🚀</span>
+          <span class="cmd-item-title">Read Professional Experience</span>
+          <span class="cmd-item-key">04</span>
+        </li>
+        <li class="cmd-item" data-action="goto" data-target="contact">
+          <span class="cmd-item-icon">✉</span>
+          <span class="cmd-item-title">Send a Direct Message</span>
+          <span class="cmd-item-key">05</span>
+        </li>
+        <li class="cmd-item" data-action="theme" data-theme="violet">
+          <span class="cmd-item-icon">🟣</span>
+          <span class="cmd-item-title">Switch Palette: Royal Violet</span>
+        </li>
+        <li class="cmd-item" data-action="theme" data-theme="gold">
+          <span class="cmd-item-icon">🟡</span>
+          <span class="cmd-item-title">Switch Palette: Imperial Gold</span>
+        </li>
+        <li class="cmd-item" data-action="theme" data-theme="emerald">
+          <span class="cmd-item-icon">🟢</span>
+          <span class="cmd-item-title">Switch Palette: Hyper Emerald</span>
+        </li>
+        <li class="cmd-item" data-action="theme" data-theme="ember">
+          <span class="cmd-item-icon">🔴</span>
+          <span class="cmd-item-title">Switch Palette: Crimson Ember</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       POKOPIA: MODAL (Game UI Spring Physics Architectural Passport Dialog)
+       ========================================================================= -->
+  <!-- =========================================================================
+       SYSTEM BLUEPRINT MODAL (Game UI Spring Physics Architectural Passport Dialog)
+       ========================================================================= -->
+  <div class="pokopia-modal-backdrop" id="pokopia-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pokopia-title">
+    <div class="pokopia-modal-container">
+      <div class="pokopia-card" id="pokopia-card">
+        
+        <!-- Game UI Header Strip with Tactile Lights -->
+        <div class="pokopia-header-bar">
+          <div class="pokopia-header-left">
+            <span class="pokopia-badge-pill">SYSTEM BLUEPRINT · SPEC 01</span>
+            <span class="pokopia-beacon-live">
+              <span class="pokopia-beacon-dot"></span>
+              READY FOR AI ROLES (MAY 2027)
+            </span>
+          </div>
+          <button type="button" class="pokopia-close-btn" id="pokopia-close-btn" aria-label="Close System Blueprint Modal">✕</button>
+        </div>
+
+        <!-- Main Body Grid -->
+        <div class="pokopia-card-body">
+          <!-- Left Identity Column -->
+          <div class="pokopia-hero-col">
+            <div class="pokopia-avatar-frame">
+              <img src="images/mayank_suit.jpg" alt="Mayank Tiwari portrait" class="pokopia-avatar-img">
+              <div class="pokopia-avatar-stamp">RANK #6 NAT'L</div>
+            </div>
+            <h2 class="pokopia-name" id="pokopia-title">Mayank Tiwari</h2>
+            <p class="pokopia-role">Autonomous AI &amp; Cloud Systems Engineer</p>
+            <div class="pokopia-meta-tags">
+              <span class="pokopia-chip">BBDU Lucknow '27</span>
+              <span class="pokopia-chip">LovHack Winner</span>
+              <span class="pokopia-chip">FastAPI · Merkle</span>
+            </div>
+          </div>
+
+          <!-- Right Content Column with Tactile Tabs -->
+          <div class="pokopia-content-col">
+            <div class="pokopia-tabs-nav" role="tablist">
+              <button type="button" class="pokopia-tab-btn active" data-tab="specs">SYSTEM SPECS</button>
+              <button type="button" class="pokopia-tab-btn" data-tab="connect">DIRECT CONNECT</button>
+            </div>
+
+            <!-- Tab 1: System Specs -->
+            <div class="pokopia-tab-pane is-active" id="pokopia-pane-specs">
+              <div class="pokopia-metrics-grid">
+                <div class="pokopia-stat-box">
+                  <span class="pokopia-stat-val">Rank #6</span>
+                  <span class="pokopia-stat-lbl">AMPlified Season 1 Finals</span>
+                </div>
+                <div class="pokopia-stat-box">
+                  <span class="pokopia-stat-val">Winner</span>
+                  <span class="pokopia-stat-lbl">LovHack Season 2 (Parity)</span>
+                </div>
+                <div class="pokopia-stat-box">
+                  <span class="pokopia-stat-val">14+</span>
+                  <span class="pokopia-stat-lbl">Production Systems Shipped</span>
+                </div>
+                <div class="pokopia-stat-box">
+                  <span class="pokopia-stat-val">82 / 82</span>
+                  <span class="pokopia-stat-lbl">BackStop Tests Passing</span>
+                </div>
+              </div>
+              <div class="pokopia-summary-quote">
+                “I build systems that solve real problems: deterministic financial policy gates, client-side Merkle proof chains, and cloud compute optimizers.”
+              </div>
+            </div>
+
+            <!-- Tab 2: Direct Connect -->
+            <div class="pokopia-tab-pane" id="pokopia-pane-connect">
+              <div class="pokopia-connect-list">
+                <a href="mailto:mayank.tiwarii1720@gmail.com" class="pokopia-connect-card">
+                  <div class="pokopia-connect-icon">✉</div>
+                  <div>
+                    <span class="pokopia-connect-title">mayank.tiwarii1720@gmail.com</span>
+                    <span class="pokopia-connect-sub">Primary Direct Email · Click to Contact</span>
+                  </div>
+                </a>
+                <a href="https://github.com/nika619" target="_blank" rel="noopener noreferrer" class="pokopia-connect-card">
+                  <div class="pokopia-connect-icon">🐙</div>
+                  <div>
+                    <span class="pokopia-connect-title">github.com/nika619</span>
+                    <span class="pokopia-connect-sub">Verified Code Repositories &amp; Architecture</span>
+                  </div>
+                </a>
+                <a href="https://www.linkedin.com/in/imayanktiwari/" target="_blank" rel="noopener noreferrer" class="pokopia-connect-card">
+                  <div class="pokopia-connect-icon">💼</div>
+                  <div>
+                    <span class="pokopia-connect-title">linkedin.com/in/imayanktiwari/</span>
+                    <span class="pokopia-connect-sub">Professional Network &amp; Honors</span>
+                  </div>
+                </a>
+                <a href="https://contra.com/mayank_tiwari_a4vkcjsh?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=mayank_tiwari_a4vkcjsh" target="_blank" rel="noopener noreferrer" class="pokopia-connect-card">
+                  <div class="pokopia-connect-icon">⚡</div>
+                  <div>
+                    <span class="pokopia-connect-title">contra.com/mayank_tiwari_a4vkcjsh</span>
+                    <span class="pokopia-connect-sub">Independent Engineering &amp; Client Projects</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Footer Control Strip -->
+        <div class="pokopia-card-footer">
+          <span class="pokopia-footer-tag">// VERIFIED ENGINEERING BLUEPRINT · SPRING PHYSICS ACTIVE</span>
+          <button type="button" class="pokopia-done-btn" id="pokopia-done-btn">Dismiss (ESC)</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       LEGAL MODAL (Privacy Policy & Terms of Service)
+       ========================================================================= -->
+  <div class="legal-modal-backdrop" id="legal-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+    <div class="legal-modal-container">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legal-modal-title">Legal Terms</h3>
+        <button type="button" class="legal-modal-close-btn" id="legal-modal-close-btn" aria-label="Close Legal Modal">✕</button>
+      </div>
+      <div class="legal-modal-body" id="legal-modal-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FLOATING ACTION BUTTON (FAB DOCK)
+       ========================================================================= -->
+  <div class="floating-action-dock" id="floating-action-dock" aria-label="Quick Actions Dock">
+    <button type="button" class="fab-btn fab-pokopia" id="fab-pokopia-btn" title="Open System Blueprint" aria-label="Open System Blueprint">
+      <span class="fab-sparkle">✦</span>
+      <span class="fab-tooltip">System Blueprint</span>
+    </button>
+    <button type="button" class="fab-btn fab-cmd" id="fab-cmd-btn" title="Search Portfolio (⌘K)" aria-label="Open Command Palette">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span class="fab-tooltip">Search (⌘K)</span>
+    </button>
+    <button type="button" class="fab-btn fab-top" id="fab-scroll-top-btn" title="Scroll to Top" aria-label="Scroll to Top">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+      <span class="fab-tooltip">Back to Top</span>
+    </button>
+  </div>
+
+  <!-- Master Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
