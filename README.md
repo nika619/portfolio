@@ -1,8 +1,8 @@
 # Mayank Tiwari — Portfolio
 
-> Cinematic dark portfolio · Ember theme · Three.js · Lenis smooth scroll · Canvas 2D
+> Cinematic dark portfolio · Three.js 70k particle field · GSAP & ScrollTrigger · Lenis smooth scroll · Director's cut motion
 
-Live: **[mayank.dev](https://nika619.github.io/portfolio)** *(hosting below)*
+Live: **[mayank.dev](https://nika619.github.io/portfolio)** *(or [portfolio-mayankk1720.vercel.app](https://portfolio-mayankk1720.vercel.app/))*
 
 ---
 
@@ -10,12 +10,13 @@ Live: **[mayank.dev](https://nika619.github.io/portfolio)** *(hosting below)*
 
 | Layer | Tech |
 |-------|------|
-| Core | Vanilla HTML · CSS · JavaScript (ES2022) |
-| 3D / WebGL | Three.js (morphing blob + particle system) |
+| Core | Vanilla HTML · CSS · JavaScript (ES Modules) |
+| 3D / WebGL | Three.js (70,000 particle morphing field, custom GLSL shaders, depth of field bokeh) |
+| Motion | GSAP 3.13 · ScrollTrigger · SplitText · ScrambleText |
 | Scroll | Lenis smooth inertia scroll |
-| Audio | Web Audio API (synthwave ambient pad) |
-| Fonts | Space Grotesk · JetBrains Mono (Google Fonts) |
-| Deploy | GitHub Pages |
+| Forms | FormSubmit (direct inbox routing with mailto fallback) |
+| Fonts | Roboto Flex · Space Grotesk · Inter · JetBrains Mono · Instrument Serif |
+| Deploy | GitHub Pages / Vercel (zero build step) |
 
 ## Featured Projects
 
@@ -29,9 +30,10 @@ Live: **[mayank.dev](https://nika619.github.io/portfolio)** *(hosting below)*
 ## Local Preview
 
 ```bash
-# No build step needed — just open the file
-open index.html
-# or
+# Using Python
+python -m http.server 8000
+
+# or using Node
 npx serve .
 ```
 
