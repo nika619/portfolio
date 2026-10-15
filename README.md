@@ -2,7 +2,7 @@
 
 > Cinematic dark portfolio · Three.js 70k particle field · GSAP & ScrollTrigger · Lenis smooth scroll · Director's cut motion
 
-Live: **[mayank.dev](https://nika619.github.io/portfolio)** *(or [portfolio-mayankk1720.vercel.app](https://portfolio-mayankk1720.vercel.app/))*
+Live: **[portfolio-mayankk1720.vercel.app](https://portfolio-mayankk1720.vercel.app/)**
 
 ---
 
