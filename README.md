@@ -23,7 +23,7 @@ Live: **[portfolio-mayankk1720.vercel.app](https://portfolio-mayankk1720.vercel.
 | # | Project | Achievement |
 |---|---------|-------------|
 | 01 | **Parity** — Autonomous AI Voice Debate Arena | 🏆 LovHack Season 2 Winner |
-| 02 | **Career PathFinder** — Multi-Agent Guidance Engine | 🥈 AMPlified S1 — Rank #6 National Finalist |
+| 02 | **Career PathFinder** — Multi-Agent Guidance Engine | 🥈 HCLTech AMPlified S1 — Top 25 (Round 2) |
 | 03 | **ECO-OPS** — Intelligent CI Compute Optimizer | GitLab AI Hackathon · GCP Cloud Run |
 | 04 | **BackStop** — Deterministic Policy Gate & Merkle Chain | 82/82 Tests · RBI 2026 Compliant |
 
